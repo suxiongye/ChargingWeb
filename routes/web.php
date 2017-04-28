@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/chargings/api/', 'ChargingApiController@index');
 Route::get('/chargings/api/open/{id}', 'ChargingApiController@open');
 Route::get('/chargings/api/close/{id}', 'ChargingApiController@close');
+Route::get('/chargings/api/isopen/{id}', 'ChargingApiController@isOpen');
 
 Auth::routes();
 Route::group(['middleware'=>'auth'], function (){

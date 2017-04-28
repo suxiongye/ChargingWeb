@@ -32,7 +32,7 @@ class ChargingController extends Controller
         $charging->used = "unused";
         $charging->save();
 
-        return view('chargings.show')->withCharging($charging);
+        return redirect('/chargings');
     }
 
     //显示充电桩具体信息

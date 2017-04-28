@@ -19,6 +19,19 @@ class ChargingApiController extends Controller
         return $chargings->makeHidden(['url', 'created_at', 'updated_at'])->toArray();
     }
 
+    //查看是否开启
+    public function isOpen($id)
+    {
+        $charging = Charging::Find($id);
+        if (!$charging) {
+            return "No such charging";
+        }
+        if ($charging->used == "used")
+            return ["1"];
+        else
+            return ["0"];
+    }
+
     //开启充电桩
     public function open($id)
     {
