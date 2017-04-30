@@ -27,9 +27,9 @@ class ChargingApiController extends Controller
             return "No such charging";
         }
         if ($charging->used == "used")
-            return ["1"];
+            return "used";
         else
-            return ["0"];
+            return "unused";
     }
 
     //开启充电桩
